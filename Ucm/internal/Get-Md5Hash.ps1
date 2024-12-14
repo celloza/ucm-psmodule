@@ -8,5 +8,5 @@
     $utf8 = New-Object -TypeName System.Text.UTF8Encoding
     $hash = [System.BitConverter]::ToString($md5.ComputeHash($utf8.GetBytes($value)))
 
-    Write-Output $hash
+    $hash
 }

@@ -57,6 +57,6 @@ function Invoke-UcmDialExtension {
     }
     else
     {
-        Write-Output "Success."
+        (ConvertFrom-Json $dialExtensionResponse.content).response
     }
 }

@@ -57,6 +57,6 @@ function Get-UcmCookie {
     }
     else
     {
-        Write-Output (ConvertFrom-Json $cookieResponse.content).response.cookie
+        (ConvertFrom-Json $cookieResponse.content).response.cookie
     }
 }
