@@ -3,7 +3,7 @@
         Invokes a dial through the UCM API.
     
     .DESCRIPTION
-        This cmdlet invokes the API action "dialExtension" to initiate a call from the 
+        This cmdlet invokes the API action "dialExtension" to initiate a call from the
         specified Caller's extension to the specified Callee's extension.
     
     .PARAMETER Uri
@@ -57,6 +57,6 @@ function Invoke-UcmDialExtension {
     }
     else
     {
-        (ConvertFrom-Json $dialExtensionResponse.content).response
+        return [string](ConvertFrom-Json $dialExtensionResponse.content).response
     }
 }

@@ -39,7 +39,7 @@ $config.TestResult.Enabled = $true
 #region Run General Tests
 if ($TestGeneral)
 {
-	Write-Host  "Modules imported, proceeding with general tests"
+	Write-Host  "Modules imported, proceeding with general tests..."
 	foreach ($file in (Get-ChildItem "$PSScriptRoot\general" | Where-Object Name -like "*.Tests.ps1"))
 	{
 		if ($file.Name -notlike $Include) { continue }
@@ -73,7 +73,7 @@ $global:__pester_data.ScriptAnalyzer | Out-Host
 #region Test Commands
 if ($TestFunctions)
 {
-	Write-Host "Proceeding with individual tests"
+	Write-Host "Proceeding with individual tests..."
 	foreach ($file in (Get-ChildItem "$PSScriptRoot\functions" -Recurse -File | Where-Object Name -like "*Tests.ps1"))
 	{
 		if ($file.Name -notlike $Include) { continue }

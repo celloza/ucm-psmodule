@@ -57,6 +57,6 @@ function Get-UcmPagingGroup {
     }
     else
     {
-        (ConvertFrom-Json $listPagingGroupResponse.content).response.paginggroup
+        return [string](ConvertFrom-Json $listPagingGroupResponse.content).response.paginggroup
     }
 }

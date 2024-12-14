@@ -57,6 +57,6 @@ function Get-UcmCookie {
     }
     else
     {
-        (ConvertFrom-Json $cookieResponse.content).response.cookie
+        return [string](ConvertFrom-Json $cookieResponse.content).response.cookie
     }
 }

@@ -45,6 +45,6 @@ function Get-UcmChallenge {
     }
     else
     {
-        (ConvertFrom-Json $challengeResponse.content).response.challenge
+        return [string](ConvertFrom-Json $challengeResponse.content).response.challenge
     }
 }
