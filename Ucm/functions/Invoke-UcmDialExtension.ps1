@@ -1,4 +1,6 @@
-﻿<#
+﻿function Invoke-UcmDialExtension {
+
+    <#
     .SYNOPSIS
         Invokes a dial through the UCM API.
     
@@ -17,10 +19,8 @@
 
     .PARAMETER Cookie
         A valid authentication cookie.
-#>
-function Invoke-UcmDialExtension {
-
-    [cmdletbinding()]
+    #>
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory)]
         [string]$Uri,

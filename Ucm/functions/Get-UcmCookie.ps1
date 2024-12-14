@@ -1,4 +1,5 @@
-﻿<#
+﻿function Get-UcmCookie {
+    <#
     .SYNOPSIS
         Requests a session cookie from the UCM API.
     
@@ -21,9 +22,8 @@
     .PARAMETER Username
         The username of an API user configured on the UCM.
 #>
-function Get-UcmCookie {
 
-    [cmdletbinding()]
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory)]
         [string]$Uri,

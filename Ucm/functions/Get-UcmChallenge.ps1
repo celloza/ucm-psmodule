@@ -1,20 +1,21 @@
-﻿<#
+﻿function Get-UcmChallenge {
+
+    <#
     .SYNOPSIS
         Requests a "challenge" from the UCM API.
-    
+
     .DESCRIPTION
         This cmdlet invokes the API action "challenge", which returns a string of characters used
         to generate the session cookie (through the Get-UcmCookie cmdlet).
-    
+
     .PARAMETER Uri
         The full URI (including the protocol) to the UCM API, i.e. http://10.10.10.1:80/api.
 
     .PARAMETER Username
         The username of an API user configured on the UCM.
-#>
-function Get-UcmChallenge {
+    #>
 
-    [cmdletbinding()]
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory)]
         [string]$Uri,

@@ -22,7 +22,7 @@ This module is available through the PSGallery.
 Install it using:
 
 ```powershell
-Install-Module ucm-psmodule
+Install-Module UCM
 ```
 
 ## Authenticating

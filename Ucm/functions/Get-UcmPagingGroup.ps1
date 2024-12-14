@@ -1,4 +1,6 @@
-﻿<#
+﻿function Get-UcmPagingGroup {
+
+    <#
     .SYNOPSIS
         Requests a list of paging groups from the UCM API.
     
@@ -18,10 +20,9 @@
 
     .PARAMETER SortOrder
         The sorting order, i.e. "asc" or "desc"
-#>
-function Get-UcmPagingGroup {
+    #>
 
-    [cmdletbinding()]
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory)]
         [string]$Uri,

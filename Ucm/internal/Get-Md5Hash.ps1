@@ -12,7 +12,7 @@ function Get-Md5Hash
 {
     [cmdletbinding()]
     param (
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory, Position = 0, ValueFromPipeline = $true)]
         [string]$InputValue
     )
 
