@@ -1,4 +1,4 @@
-<#
+﻿<#
     .SYNOPSIS
         Requests a list of paging groups from the UCM API.
     
