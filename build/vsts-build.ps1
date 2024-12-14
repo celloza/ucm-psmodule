@@ -50,10 +50,10 @@ Get-ChildItem -Path "$($publishDir.FullName)\UCM\functions\" -Recurse -File -Fil
 	$text += [System.IO.File]::ReadAllText($_.FullName)
 }
 
-# Gather scripts
-Get-ChildItem -Path "$($publishDir.FullName)\UCM\internal\scripts\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
-	$text += [System.IO.File]::ReadAllText($_.FullName)
-}
+# # Gather scripts
+# Get-ChildItem -Path "$($publishDir.FullName)\UCM\internal\scripts\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
+# 	$text += [System.IO.File]::ReadAllText($_.FullName)
+# }
 
 #region Update the psm1 file & Cleanup
 [System.IO.File]::WriteAllText("$($publishDir.FullName)\UCM\ucm-psmodule.psm1", ($text -join "`n`n"), [System.Text.Encoding]::UTF8)
