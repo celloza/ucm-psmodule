@@ -19,17 +19,34 @@ param (
 #region Handle Working Directory Defaults
 if (-not $WorkingDirectory)
 {
+	Write-Host "WorkingDirectory not set"
 	if ($env:RELEASE_PRIMARYARTIFACTSOURCEALIAS)
 	{
+		Write-Host "env:RELEASE_PRIMARYARTIFACTSOURCEALIAS not set"
 		$WorkingDirectory = Join-Path -Path $env:SYSTEM_DEFAULTWORKINGDIRECTORY -ChildPath $env:RELEASE_PRIMARYARTIFACTSOURCEALIAS
+		Write-Host "New working directory:"
+		Write-Host "env:SYSTEM_DEFAULTWORKINGDIRECTORY: $env:SYSTEM_DEFAULTWORKINGDIRECTORY"
+		Write-Host "env:RELEASE_PRIMARYARTIFACTSOURCEALIAS: $env:RELEASE_PRIMARYARTIFACTSOURCEALIAS"
+		Write-Host "Join-Path: $WorkingDirectory"
 	}
-	else { $WorkingDirectory = $env:SYSTEM_DEFAULTWORKINGDIRECTORY }
+	else 
+	{ 
+		Write-Host "env:RELEASE_PRIMARYARTIFACTSOURCEALIAS is set"
+		$WorkingDirectory = $env:SYSTEM_DEFAULTWORKINGDIRECTORY
+		Write-Host "WorkingDirectory: $WorkingDirectory"
+	}
 }
-if (-not $WorkingDirectory) { $WorkingDirectory = Split-Path $PSScriptRoot }
+if (-not $WorkingDirectory) 
+{
+	Write-Host "WorkingDirectory still not set"
+	$WorkingDirectory = Split-Path $PSScriptRoot
+	Write-Host "PSScriptRoot: $PSScriptRoot"
+	Write-Host "WorkingDirectory: $WorkingDirectory"
+}
 #endregion Handle Working Directory Defaults
 
 # Prepare publish folder
-Write-Host "Creating and populating publishing directory"
+Write-Host "Creating and populating publishing directory..."
 $publishDir = New-Item -Path $WorkingDirectory -Name publish -ItemType Directory -Force
 Copy-Item -Path "$($WorkingDirectory)\UCM" -Destination $publishDir.FullName -Recurse -Force
 
