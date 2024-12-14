@@ -11,6 +11,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Install Latest PowerShell
+      shell: pwsh
+      run: |
+            dotnet tool install --global PowerShell
+            $content = Get-Content -Path $env:GITHUB_PATH
+            $HOME + "/.dotnet/tools`r`n" + $content | Set-Content -Path $env:GITHUB_PATH -Encoding utf8
     - name: Install Prerequisites
       run: .\build\vsts-prerequisites.ps1
       shell: pwsh7
