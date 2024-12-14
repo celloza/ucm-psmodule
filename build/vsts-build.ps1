@@ -56,7 +56,7 @@ Get-ChildItem -Path "$($publishDir.FullName)\UCM\functions\" -Recurse -File -Fil
 # }
 
 #region Update the psm1 file & Cleanup
-[System.IO.File]::WriteAllText("$($publishDir.FullName)\UCM\ucm-psmodule.psm1", ($text -join "`n`n"), [System.Text.Encoding]::UTF8)
+[System.IO.File]::WriteAllText("$($publishDir.FullName)\UCM\UCM.psm1", ($text -join "`n`n"), [System.Text.Encoding]::UTF8)
 Remove-Item -Path "$($publishDir.FullName)\UCM\internal" -Recurse -Force
 Remove-Item -Path "$($publishDir.FullName)\UCM\functions" -Recurse -Force
 #endregion Update the psm1 file & Cleanup
@@ -64,19 +64,19 @@ Remove-Item -Path "$($publishDir.FullName)\UCM\functions" -Recurse -Force
 #region Updating the Module Version
 if ($AutoVersion)
 {
-	Write-Host  "Updating module version numbers."
-	try { [version]$remoteVersion = (Find-Module 'ucm-psmodule' -Repository $Repository -ErrorAction Stop).Version }
+	Write-Host  "Updating module version numbers..."
+	try { [version]$remoteVersion = (Find-Module 'UCM' -Repository $Repository -ErrorAction Stop).Version }
 	catch
 	{
 		throw "Failed to access $($Repository) : $_"
 	}
 	if (-not $remoteVersion)
 	{
-		throw "Couldn't find ucm-psmodule on repository $($Repository) : $_"
+		throw "Couldn't find UCM on repository $($Repository) : $_"
 	}
 	$newBuildNumber = $remoteVersion.Build + 1
-	[version]$localVersion = (Import-PowerShellDataFile -Path "$($publishDir.FullName)\UCM\ucm-psmodule.psd1").ModuleVersion
-	Update-ModuleManifest -Path "$($publishDir.FullName)\UCM\ucm-psmodule.psd1" -ModuleVersion "$($localVersion.Major).$($localVersion.Minor).$($newBuildNumber)"
+	[version]$localVersion = (Import-PowerShellDataFile -Path "$($publishDir.FullName)\UCM\UCM.psd1").ModuleVersion
+	Update-ModuleManifest -Path "$($publishDir.FullName)\UCM\UCM.psd1" -ModuleVersion "$($localVersion.Major).$($localVersion.Minor).$($newBuildNumber)"
 }
 #endregion Updating the Module Version
 
@@ -94,9 +94,7 @@ else
 {
 	# Publish to Gallery
 	Write-Host  "Publishing the ucm-psmodule module to $($Repository)"
-	Write-Host  "Files to publish:"
-	gci -Recurse "$($publishDir.FullName)\UCM" | cat
 
-	#Publish-Module -Path "$($publishDir.FullName)\UCM" -NuGetApiKey $ApiKey -Force -Repository $Repository
+	Publish-Module -Path "$($publishDir.FullName)\UCM" -NuGetApiKey $ApiKey -Force -Repository $Repository
 }
 #endregion Publish

@@ -6,7 +6,7 @@
 $modules = @("Pester", "PSScriptAnalyzer")
 
 # Automatically add missing dependencies
-$data = Import-PowerShellDataFile -Path "$PSScriptRoot\..\UCM\ucm-psmodule.psd1"
+$data = Import-PowerShellDataFile -Path "$PSScriptRoot\..\UCM\UCM.psd1"
 foreach ($dependency in $data.RequiredModules) {
     if ($dependency -is [string]) {
         if ($modules -contains $dependency) { continue }

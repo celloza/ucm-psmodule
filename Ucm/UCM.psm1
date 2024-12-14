@@ -3,7 +3,7 @@ $Public  = @( Get-ChildItem -Path $PSScriptRoot\UCM\functions\*.ps1 -ErrorAction
 $Private = @( Get-ChildItem -Path $PSScriptRoot\UCM\internal\*.ps1 -ErrorAction SilentlyContinue )
 
 #Dot source the files
-Foreach($import in @($Public + $Private))
+foreach($import in @($Public + $Private))
 {
     Try
     {
