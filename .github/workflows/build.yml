@@ -13,12 +13,12 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install Prerequisites
       run: .\build\vsts-prerequisites.ps1
-      shell: powershell
+      shell: pwsh7
     - name: Validate
       run: .\build\vsts-validate.ps1
-      shell: powershell
+      shell: pwsh7
     - name: Build
       run: .\build\vsts-build.ps1 -ApiKey $env:APIKEY -SkipPublish -AutoVersion
-      shell: powershell
+      shell: pwsh7
       env:
         APIKEY: ${{ secrets.ApiKey }}
