@@ -37,7 +37,9 @@ if (-not $WorkingDirectory)
 # Prepare publish folder
 Write-Host "Creating and populating publishing directory..."
 $publishDir = New-Item -Path $WorkingDirectory -Name publish -ItemType Directory -Force
-Copy-Item -Path "$($WorkingDirectory)\..\UCM" -Destination $publishDir.FullName -Recurse -Force
+Copy-Item -Path "$($WorkingDirectory)\UCM" -Destination $publishDir.FullName -Recurse -Force
+
+gci -recurse $publishDir
 
 #region Gather text data to compile
 $text = @()
@@ -87,13 +89,13 @@ if ($LocalRepo)
 	# Dependencies must go first
 	Write-Host  "Creating Nuget Package for module: PSFramework"
 	New-PSMDModuleNugetPackage -ModulePath (Get-Module -Name PSFramework).ModuleBase -PackagePath .
-	Write-Host  "Creating Nuget Package for module: ucm-psmodule"
-	New-PSMDModuleNugetPackage -ModulePath "$($publishDir.FullName)\ucm-psmodule" -PackagePath .
+	Write-Host  "Creating Nuget Package for module: UCM"
+	New-PSMDModuleNugetPackage -ModulePath "$($publishDir.FullName)\UCM" -PackagePath .
 }
 else
 {
 	# Publish to Gallery
 	Write-Host  "Publishing the ucm-psmodule module to $($Repository)"
-	Publish-Module -Path "$($publishDir.FullName)\ucm-psmodule" -NuGetApiKey $ApiKey -Force -Repository $Repository
+	Publish-Module -Path "$($publishDir.FullName)\UCM" -NuGetApiKey $ApiKey -Force -Repository $Repository
 }
 #endregion Publish
