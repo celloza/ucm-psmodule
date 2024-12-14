@@ -15,6 +15,16 @@ A full list of the methods available through the API can be found here: [Grandst
 
 Although this document specifies the UCM6510 and UCM62xx Series, it is expected to work (or work with minimal changes) with other UCM versions.
 
+## Getting started
+
+This module is available through the PSGallery.
+
+Install it using:
+
+```powershell
+Install-Module ucm-psmodule
+```
+
 ## Authenticating
 
 Authenticating with the API requires a couple of steps:

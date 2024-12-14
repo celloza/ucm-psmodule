@@ -20,8 +20,8 @@ $global:testroot = $PSScriptRoot
 $global:__pester_data = @{ }
 
 Remove-Module ucm-psmodule -ErrorAction Ignore
-Import-Module "$PSScriptRoot\..\ucm-psmodule\ucm-psmodule.psd1"
-Import-Module "$PSScriptRoot\..\ucm-psmodule\ucm-psmodule.psm1" -Force
+Import-Module "$PSScriptRoot\ucm-psmodule.psd1"
+Import-Module "$PSScriptRoot\ucm-psmodule.psm1" -Force
 
 # Need to import explicitly so we can use the configuration class
 Import-Module Pester

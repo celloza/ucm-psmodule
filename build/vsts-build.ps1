@@ -31,28 +31,28 @@ if (-not $WorkingDirectory) { $WorkingDirectory = Split-Path $PSScriptRoot }
 # Prepare publish folder
 Write-Host "Creating and populating publishing directory"
 $publishDir = New-Item -Path $WorkingDirectory -Name publish -ItemType Directory -Force
-Copy-Item -Path "$($WorkingDirectory)\ucm-psmodule" -Destination $publishDir.FullName -Recurse -Force
+Copy-Item -Path "$($WorkingDirectory)\UCM" -Destination $publishDir.FullName -Recurse -Force
 
 #region Gather text data to compile
 $text = @()
 
 # Gather commands
-Get-ChildItem -Path "$($publishDir.FullName)\ucm-psmodule\internal\functions\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
+Get-ChildItem -Path "$($publishDir.FullName)\UCM\internal\functions\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
 	$text += [System.IO.File]::ReadAllText($_.FullName)
 }
-Get-ChildItem -Path "$($publishDir.FullName)\ucm-psmodule\functions\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
+Get-ChildItem -Path "$($publishDir.FullName)\UCM\functions\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
 	$text += [System.IO.File]::ReadAllText($_.FullName)
 }
 
 # Gather scripts
-Get-ChildItem -Path "$($publishDir.FullName)\ucm-psmodule\internal\scripts\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
+Get-ChildItem -Path "$($publishDir.FullName)\UCM\internal\scripts\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
 	$text += [System.IO.File]::ReadAllText($_.FullName)
 }
 
 #region Update the psm1 file & Cleanup
-[System.IO.File]::WriteAllText("$($publishDir.FullName)\ucm-psmodule\ucm-psmodule.psm1", ($text -join "`n`n"), [System.Text.Encoding]::UTF8)
-Remove-Item -Path "$($publishDir.FullName)\ucm-psmodule\internal" -Recurse -Force
-Remove-Item -Path "$($publishDir.FullName)\ucm-psmodule\functions" -Recurse -Force
+[System.IO.File]::WriteAllText("$($publishDir.FullName)\UCM\ucm-psmodule.psm1", ($text -join "`n`n"), [System.Text.Encoding]::UTF8)
+Remove-Item -Path "$($publishDir.FullName)\UCM\internal" -Recurse -Force
+Remove-Item -Path "$($publishDir.FullName)\UCM\functions" -Recurse -Force
 #endregion Update the psm1 file & Cleanup
 
 #region Updating the Module Version
@@ -69,8 +69,8 @@ if ($AutoVersion)
 		throw "Couldn't find ucm-psmodule on repository $($Repository) : $_"
 	}
 	$newBuildNumber = $remoteVersion.Build + 1
-	[version]$localVersion = (Import-PowerShellDataFile -Path "$($publishDir.FullName)\ucm-psmodule\ucm-psmodule.psd1").ModuleVersion
-	Update-ModuleManifest -Path "$($publishDir.FullName)\ucm-psmodule\ucm-psmodule.psd1" -ModuleVersion "$($localVersion.Major).$($localVersion.Minor).$($newBuildNumber)"
+	[version]$localVersion = (Import-PowerShellDataFile -Path "$($publishDir.FullName)\UCM\ucm-psmodule.psd1").ModuleVersion
+	Update-ModuleManifest -Path "$($publishDir.FullName)\UCM\ucm-psmodule.psd1" -ModuleVersion "$($localVersion.Major).$($localVersion.Minor).$($newBuildNumber)"
 }
 #endregion Updating the Module Version
 
