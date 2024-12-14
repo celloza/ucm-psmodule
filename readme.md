@@ -1,5 +1,5 @@
 ﻿# ucm-psmodule
-![Validate](https://github.com/celloza/ucm-psmodule/actions/workflows/validate.yml/badge.svg)
+![Validate](https://github.com/celloza/ucm-psmodule/actions/workflows/validate.yml/badge.svg?branch=main)
 
 A PowerShell Module containing cmdlets to interface with Grandstream UCM PABX devices' APIs.
 
@@ -73,4 +73,4 @@ The list of supported UCM API _actions_ (so far) only consists of:
 We welcome contributions through Pull Requests.
 
 # License
-Copyright (c) Marcel du Preez. All Rights Reserved. Licensed under the MIT [license](#LICENSE).
+Copyright (c) Marcel du Preez. All Rights Reserved. Licensed under the MIT [license](LICENSE).
