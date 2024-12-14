@@ -27,4 +27,4 @@ jobs:
       run: .\build\vsts-build.ps1 -ApiKey $env:APIKEY -SkipPublish -AutoVersion
       shell: pwsh
       env:
-        APIKEY: ${{ secrets.ApiKey }}
+        APIKEY: ${{ secrets.PSGalleryApiKey }}
