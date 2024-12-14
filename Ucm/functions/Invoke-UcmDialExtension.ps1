@@ -3,8 +3,8 @@
         Invokes a dial through the UCM API.
     
     .DESCRIPTION
-        This cmdlet invokes the API action "dialExtension" from the specified Caller's
-        extension to the specified Callee's extension.
+        This cmdlet invokes the API action "dialExtension" to initiate a call from the 
+        specified Caller's extension to the specified Callee's extension.
     
     .PARAMETER Uri
         The full URI (including the protocol) to the UCM API, i.e. http://10.10.10.1:80/api.

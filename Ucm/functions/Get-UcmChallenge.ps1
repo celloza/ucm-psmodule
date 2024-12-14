@@ -27,8 +27,8 @@ function Get-UcmChallenge {
 
     $challengeRequest = @{
         request = @{
-            "action"="challenge"
-            "user"= $Username
+            "action" = "challenge"
+            "user" = $Username
         }
     }
 
