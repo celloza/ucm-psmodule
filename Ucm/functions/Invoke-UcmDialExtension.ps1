@@ -55,8 +55,8 @@ function Invoke-UcmDialExtension {
     {
         Write-Error "Could not dial extension $CalleeExtension. Status code was $((ConvertFrom-Json $dialExtensionResponse.content).status)."
     }
-    else 
+    else
     {
         Write-Output "Success."
-    }    
+    }
 }

@@ -55,8 +55,8 @@ function Get-UcmCookie {
     {
         Write-Error "Could not get a cookie from $uri. Status code was $((ConvertFrom-Json $cookieResponse.content).status)."
     }
-    else 
+    else
     {
         Write-Output (ConvertFrom-Json $cookieResponse.content).response.cookie
-    }    
+    }
 }

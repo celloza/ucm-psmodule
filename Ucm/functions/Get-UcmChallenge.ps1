@@ -43,8 +43,8 @@ function Get-UcmChallenge {
     {
         Write-Error "Could not get a challenge code from $uri. Status code was $((ConvertFrom-Json $cookieResponse.content).status)."
     }
-    else 
+    else
     {
         Write-Output (ConvertFrom-Json $challengeResponse.content).response.challenge
-    }    
+    }
 }

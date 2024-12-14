@@ -60,7 +60,6 @@ $commands = Get-Command -Module (Get-Module $ModuleName) -CommandType $commandTy
 ## When testing help, remember that help is cached at the beginning of each session.
 ## To test, restart session.
 
-
 foreach ($command in $commands) {
     $commandName = $command.Name
     

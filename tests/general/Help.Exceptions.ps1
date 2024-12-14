@@ -1,7 +1,5 @@
 ﻿# List of functions that should be ignored
-$global:FunctionHelpTestExceptions = @(
-    
-)
+$global:FunctionHelpTestExceptions = @()
 
 <#
   List of arrayed enumerations. These need to be treated differently. Add full name.
@@ -9,9 +7,7 @@ $global:FunctionHelpTestExceptions = @(
 
   "Sqlcollaborative.Dbatools.Connection.ManagementConnectionType[]"
 #>
-$global:HelpTestEnumeratedArrays = @(
-	
-)
+$global:HelpTestEnumeratedArrays = @()
 
 <#
   Some types on parameters just fail their validation no matter what.
@@ -21,6 +17,4 @@ $global:HelpTestEnumeratedArrays = @(
 
   "Get-DbaCmObject"       = @("DoNotUse")
 #>
-$global:HelpTestSkipParameterType = @{
-    
-}
+$global:HelpTestSkipParameterType = @{}

@@ -22,7 +22,7 @@
 function Get-UcmPagingGroup {
 
     [cmdletbinding()]
-    param (        
+    param (
         [Parameter(Mandatory)]
         [string]$Uri,
         [Parameter(Mandatory)]
@@ -55,8 +55,8 @@ function Get-UcmPagingGroup {
     {
         Write-Error "Could not get a cookie from $Uri. Status code was $((ConvertFrom-Json $listPagingGroupResponse.content).status)."
     }
-    else 
+    else
     {
         Write-Output (ConvertFrom-Json $listPagingGroupResponse.content).response.paginggroup
-    }    
+    }
 }
