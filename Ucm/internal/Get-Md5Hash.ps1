@@ -1,4 +1,4 @@
-function Get-Md5Hash
+﻿function Get-Md5Hash
 {
     param (
         [string]$value

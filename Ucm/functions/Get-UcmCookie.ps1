@@ -10,9 +10,9 @@
         The full URI (including the protocol) to the UCM API, i.e. http://10.10.10.1:80/api.
 
     .PARAMETER Md5Token
-        The token to use to authenticate. This expects an MD5 hash of a string consisting of 
-        the challenge requested through the Get-UcmChallenge cmdlet, concatenated with the 
-        API user's password (as configured on the UCM), i.e. 
+        The token to use to authenticate. This expects an MD5 hash of a string consisting of
+        the challenge requested through the Get-UcmChallenge cmdlet, concatenated with the
+        API user's password (as configured on the UCM), i.e.
         
         $TokenString = "$($challenge)$($password)"
 
