@@ -19,12 +19,12 @@ jobs:
             $HOME + "/.dotnet/tools`r`n" + $content | Set-Content -Path $env:GITHUB_PATH -Encoding utf8
     - name: Install Prerequisites
       run: .\build\vsts-prerequisites.ps1
-      shell: pwsh7
+      shell: pwsh
     - name: Validate
       run: .\build\vsts-validate.ps1
-      shell: pwsh7
+      shell: pwsh
     - name: Build
       run: .\build\vsts-build.ps1 -ApiKey $env:APIKEY -SkipPublish -AutoVersion
-      shell: pwsh7
+      shell: pwsh
       env:
         APIKEY: ${{ secrets.ApiKey }}
