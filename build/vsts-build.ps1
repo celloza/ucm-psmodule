@@ -29,14 +29,14 @@ if (-not $WorkingDirectory)
 		Write-Host "env:RELEASE_PRIMARYARTIFACTSOURCEALIAS: $env:RELEASE_PRIMARYARTIFACTSOURCEALIAS"
 		Write-Host "Join-Path: $WorkingDirectory"
 	}
-	else 
-	{ 
+	else
+	{
 		Write-Host "env:RELEASE_PRIMARYARTIFACTSOURCEALIAS is set"
 		$WorkingDirectory = $env:SYSTEM_DEFAULTWORKINGDIRECTORY
 		Write-Host "WorkingDirectory: $WorkingDirectory"
 	}
 }
-if (-not $WorkingDirectory) 
+if (-not $WorkingDirectory)
 {
 	Write-Host "WorkingDirectory still not set"
 	$WorkingDirectory = Split-Path $PSScriptRoot
