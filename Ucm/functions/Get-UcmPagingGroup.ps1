@@ -1,27 +1,30 @@
-﻿function Get-UcmPagingGroup {
+﻿<#
+.SYNOPSIS
+    Requests a list of paging groups from the UCM API.
 
-    <#
-    .SYNOPSIS
-        Requests a list of paging groups from the UCM API.
-    
-    .DESCRIPTION
-        This cmdlet invokes the API action "listPaginggroup", which returns a list of all
-        Paging Groups configured on the UCM. Results are returned in sets of pages, with the
-        PageNumber argument selecting the specific page to return.
-    
-    .PARAMETER Uri
-        The full URI (including the protocol) to the UCM API, i.e. http://10.10.10.1:80/api.
+.DESCRIPTION
+    This cmdlet invokes the API action "listPaginggroup", which returns a list of all
+    Paging Groups configured on the UCM. Results are returned in sets of pages, with the
+    PageNumber argument selecting the specific page to return.
 
-    .PARAMETER Cookie
-        A valid authentication cookie.
+.PARAMETER Uri
+    The full URI (including the protocol) to the UCM API, i.e. http://10.10.10.1:80/api.
 
-    .PARAMETER PageNumber
-        The number for the page to return. Defaults to 1.
+.PARAMETER Cookie
+    A valid authentication cookie.
 
-    .PARAMETER SortOrder
-        The sorting order, i.e. "asc" or "desc"
-    #>
+.PARAMETER PageNumber
+    The number for the page to return. Defaults to 1.
 
+.PARAMETER SortOrder
+    The sorting order, i.e. "asc" or "desc"
+
+.EXAMPLE
+    # Request the second page of Paging Groups
+    Get-UcmPagingGroup -Uri http://10.10.10.1/api Cookie xxx -PageNumber 2 -SortOrder "asc"
+#>
+function Get-UcmPagingGroup
+{
     [CmdletBinding()]
     param (
         [Parameter(Mandatory)]

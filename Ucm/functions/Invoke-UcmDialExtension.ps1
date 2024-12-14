@@ -1,25 +1,25 @@
-﻿function Invoke-UcmDialExtension {
+﻿<#
+.SYNOPSIS
+    Invokes a dial through the UCM API.
 
-    <#
-    .SYNOPSIS
-        Invokes a dial through the UCM API.
-    
-    .DESCRIPTION
-        This cmdlet invokes the API action "dialExtension" to initiate a call from the
-        specified Caller's extension to the specified Callee's extension.
-    
-    .PARAMETER Uri
-        The full URI (including the protocol) to the UCM API, i.e. http://10.10.10.1:80/api.
+.DESCRIPTION
+    This cmdlet invokes the API action "dialExtension" to initiate a call from the
+    specified Caller's extension to the specified Callee's extension.
 
-    .PARAMETER CallerExtension
-        The extension number for the call originator.
+.PARAMETER Uri
+    The full URI (including the protocol) to the UCM API, i.e. http://10.10.10.1:80/api.
 
-    .PARAMETER CalleeExtension
-        The extension number for the call destination.
+.PARAMETER CallerExtension
+    The extension number for the call originator.
 
-    .PARAMETER Cookie
-        A valid authentication cookie.
-    #>
+.PARAMETER CalleeExtension
+    The extension number for the call destination.
+
+.PARAMETER Cookie
+    A valid authentication cookie.
+#>
+function Invoke-UcmDialExtension
+{
     [CmdletBinding()]
     param (
         [Parameter(Mandatory)]
