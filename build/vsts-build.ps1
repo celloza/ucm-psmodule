@@ -95,7 +95,8 @@ else
 	# Publish to Gallery
 	Write-Host  "Publishing the ucm-psmodule module to $($Repository)"
 	Write-Host  "Files to publish:"
-	gci -Recurse "$($publishDir.FullName)\UCM"
+	gci -Recurse "$($publishDir.FullName)\UCM" | cat
+
 	#Publish-Module -Path "$($publishDir.FullName)\UCM" -NuGetApiKey $ApiKey -Force -Repository $Repository
 }
 #endregion Publish
