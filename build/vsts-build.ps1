@@ -39,13 +39,11 @@ Write-Host "Creating and populating publishing directory..."
 $publishDir = New-Item -Path $WorkingDirectory -Name publish -ItemType Directory -Force
 Copy-Item -Path "$($WorkingDirectory)\UCM" -Destination $publishDir.FullName -Recurse -Force
 
-gci -recurse $publishDir
-
 #region Gather text data to compile
 $text = @()
 
 # Gather commands
-Get-ChildItem -Path "$($publishDir.FullName)\UCM\internal\functions\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
+Get-ChildItem -Path "$($publishDir.FullName)\UCM\internal\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
 	$text += [System.IO.File]::ReadAllText($_.FullName)
 }
 Get-ChildItem -Path "$($publishDir.FullName)\UCM\functions\" -Recurse -File -Filter "*.ps1" | ForEach-Object {
