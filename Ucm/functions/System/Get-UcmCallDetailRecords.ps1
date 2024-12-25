@@ -18,7 +18,7 @@
 
     '0-0' matches all non-numeric string and null string.
 
-    For example: 
+    For example:
     `caller=5300,5302-5304,_4@-orcaller=5300&caller=5302-5304&caller=_4@` matches extensions 5300, 5302, 5303,
     5304 and any extension of which the second digit is 4.
 
@@ -67,9 +67,9 @@
 
 .EXAMPLE
     # Example usage
-    Invoke-UcmCdrApi -Uri http://10.10.10.1:80/api -Cookie "session_cookie"
+    Get-UcmCallDetailRecords -Uri http://10.10.10.1:80/api -Cookie "session_cookie"
 #>
-function Invoke-UcmCdrApi
+function Get-UcmCallDetailRecords
 {
     [CmdletBinding()]
     param (
