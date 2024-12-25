@@ -1,8 +1,8 @@
 ﻿on:
   push:
-    branches:
-      - master
-      - main
+    paths:
+      - UCM
+  workflow_dispatch:
 
 jobs:
   build:
