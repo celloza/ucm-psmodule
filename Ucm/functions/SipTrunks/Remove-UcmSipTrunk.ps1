@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Removes a SipTrunk using the UCM API.
 

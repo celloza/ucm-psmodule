@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Gets call detail records through the UCM API.
 

@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Download a recording through the UCM API.
 

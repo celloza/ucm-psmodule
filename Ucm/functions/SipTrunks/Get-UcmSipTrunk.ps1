@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Gets a SIP Trunk using the UCM API.
 

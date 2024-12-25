@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Updates a Queue using the UCM API.
 

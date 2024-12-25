@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Requests a session cookie from the UCM API.
 

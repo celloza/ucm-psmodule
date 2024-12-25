@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Configure PMS actions such as Checkin and Checkout using the UCM API.
 

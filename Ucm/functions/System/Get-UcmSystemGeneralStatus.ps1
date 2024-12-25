@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Get the SystemGeneralStatus using the UCM API.
 

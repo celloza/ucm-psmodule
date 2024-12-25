@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Gets a Digital Trunk using the UCM API.
 

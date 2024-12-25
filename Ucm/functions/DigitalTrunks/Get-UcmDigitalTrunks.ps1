@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Lists all DigitalTrunks using the UCM API.
 

@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Invoke the RefuseCall using the UCM API.
 

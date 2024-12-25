@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Gets a Queue using the UCM API.
 

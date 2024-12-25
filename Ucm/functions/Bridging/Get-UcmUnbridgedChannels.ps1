@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Lists all UnbridgedChannels using the UCM API.
 

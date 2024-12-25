@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Gets an IVR using the UCM API.
 

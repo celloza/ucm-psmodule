@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Applies any pending changes made.
 

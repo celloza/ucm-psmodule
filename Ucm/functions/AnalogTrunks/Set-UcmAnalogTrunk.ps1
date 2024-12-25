@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Updates an AnalogTrunk using the UCM API.
 

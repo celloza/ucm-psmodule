@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Updates a SipTrunk using the UCM API.
 

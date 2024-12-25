@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Removes a PagingGroup using the UCM API.
 

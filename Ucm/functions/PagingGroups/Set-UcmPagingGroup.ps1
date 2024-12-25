@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Updates a PagingGroup using the UCM API.
 

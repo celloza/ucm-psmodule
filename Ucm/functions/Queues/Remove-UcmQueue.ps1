@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Removes a Queue using the UCM API.
 

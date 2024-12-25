@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Invoke the DialRingGroup using the UCM API.
 

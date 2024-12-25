@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Lists all Users using the UCM API.
 

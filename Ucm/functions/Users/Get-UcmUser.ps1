@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Gets a User using the UCM API.
 

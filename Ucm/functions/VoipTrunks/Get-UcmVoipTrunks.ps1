@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     List all VoipTrunks using the UCM API.
 

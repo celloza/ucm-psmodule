@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Requests a "challenge" from the UCM API.
 

@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Lists all ExtensionGroups using the UCM API.
 

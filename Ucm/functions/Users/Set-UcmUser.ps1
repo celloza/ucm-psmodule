@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Updates a User using the UCM API.
 

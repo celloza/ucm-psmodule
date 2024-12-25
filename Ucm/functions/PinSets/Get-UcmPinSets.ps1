@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Lists all PinSets using the UCM API.
 

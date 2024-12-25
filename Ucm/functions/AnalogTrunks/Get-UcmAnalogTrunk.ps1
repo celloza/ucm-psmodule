@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Get the AnalogTrunk using the UCM API.
 

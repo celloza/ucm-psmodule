@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Lists all IVRs using the UCM API.
 

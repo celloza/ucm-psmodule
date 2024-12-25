@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Invoke the Hangup using the UCM API.
 

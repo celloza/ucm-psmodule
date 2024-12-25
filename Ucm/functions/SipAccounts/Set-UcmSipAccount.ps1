@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Updates a SipAccount using the UCM API.
 

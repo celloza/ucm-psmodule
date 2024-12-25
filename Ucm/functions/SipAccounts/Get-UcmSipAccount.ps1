@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Gets a SIP Account using the UCM API.
 

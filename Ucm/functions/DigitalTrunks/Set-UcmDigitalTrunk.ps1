@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Updates a DigitalTrunk using the UCM API.
 

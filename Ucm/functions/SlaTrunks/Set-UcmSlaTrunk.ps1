@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Updates a SlaTrunk using the UCM API.
 

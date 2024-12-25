@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Removes an AnalogTrunk using the UCM API.
 

@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Lists all AnalogTrunks using the UCM API.
 

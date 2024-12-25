@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Gets a PagingGroup using the UCM API.
 

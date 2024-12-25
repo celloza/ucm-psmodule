@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Invoke the Mute using the UCM API.
 

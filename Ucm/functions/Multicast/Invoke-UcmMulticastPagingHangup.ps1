@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Hangs up a MulticastPaging call using the UCM API.
 
