@@ -34,8 +34,8 @@ function Get-UcmIVR
     Write-Verbose "Cookie: $Cookie"
     Write-Verbose "IvrId: $IvrId"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "getIVR"
             "cookie" = $Cookie
             "ivr" = $IvrId

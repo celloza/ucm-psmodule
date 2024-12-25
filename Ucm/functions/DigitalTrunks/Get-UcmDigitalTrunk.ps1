@@ -31,8 +31,8 @@ function Get-UcmDigitalTrunk
     Write-Verbose "Cookie: $Cookie"
     Write-Verbose "TrunkId: $TrunkId"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listDigitalTrunk"
             "cookie" = $Cookie
             "trunk" = $TrunkId

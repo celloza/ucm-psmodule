@@ -34,8 +34,8 @@ function Get-UcmQueue
     Write-Verbose "Cookie: $Cookie"
     Write-Verbose "QueueId: $QueueId"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "getQueue"
             "cookie" = $Cookie
             "Queue" = $QueueId

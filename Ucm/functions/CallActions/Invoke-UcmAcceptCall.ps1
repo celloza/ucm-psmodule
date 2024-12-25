@@ -28,8 +28,8 @@ function Invoke-UcmAcceptCall
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "acceptCall"
             "cookie" = $Cookie
         }

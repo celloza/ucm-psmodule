@@ -28,8 +28,8 @@ function Get-UcmBridgedChannels
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listBridgedChannels"
             "cookie" = $Cookie
         }

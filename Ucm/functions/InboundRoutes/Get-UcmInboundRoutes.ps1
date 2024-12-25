@@ -59,8 +59,8 @@ function Get-UcmInboundGroups
     Write-Verbose "SortByIndex: $SortByIndex"
     Write-Verbose "Fields: $Fields"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listInboundGroups"
             "cookie" = $Cookie
             "page" = $Page

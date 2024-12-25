@@ -31,8 +31,8 @@ function Get-UcmSIPTrunk
     Write-Verbose "Cookie: $Cookie"
     Write-Verbose "TrunkId: $TrunkId"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listSIPTrunk"
             "cookie" = $Cookie
             "trunk" = $TrunkId

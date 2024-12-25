@@ -28,8 +28,8 @@ function Invoke-UcmTransferNumberInbound
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "transferNumberInbound"
             "cookie" = $Cookie
         }

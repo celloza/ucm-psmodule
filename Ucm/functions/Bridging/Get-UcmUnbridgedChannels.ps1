@@ -28,8 +28,8 @@ function Get-UcmUnbridgedChannels
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listUnBridgedChannels"
             "cookie" = $Cookie
         }

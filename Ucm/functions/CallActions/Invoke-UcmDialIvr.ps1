@@ -28,8 +28,8 @@ function Invoke-UcmDialIvr
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "dialIVR"
             "cookie" = $Cookie
         }

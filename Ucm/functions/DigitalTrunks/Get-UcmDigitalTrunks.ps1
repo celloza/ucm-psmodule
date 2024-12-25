@@ -60,8 +60,8 @@ function Get-UcmDigitalTrunks
     Write-Verbose "SortByIndex: $SortByIndex"
     Write-Verbose "Fields: $Fields"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "getDigitalTrunk"
             "cookie" = $Cookie
             "page" = $Page

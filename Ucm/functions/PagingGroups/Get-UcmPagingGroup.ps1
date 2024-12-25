@@ -34,8 +34,8 @@ function Get-UcmPagingGroup
     Write-Verbose "Cookie: $Cookie"
     Write-Verbose "PagingGroupId: $PagingGroupId"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "getPaginggroup"
             "cookie" = $Cookie
             "paginggroup" = $PagingGroupId

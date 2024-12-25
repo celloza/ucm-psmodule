@@ -28,8 +28,8 @@ function Invoke-UcmPlayPromptByOrg
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "playPromptByOrg"
             "cookie" = $Cookie
         }

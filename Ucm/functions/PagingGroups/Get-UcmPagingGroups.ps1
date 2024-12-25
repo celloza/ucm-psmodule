@@ -67,8 +67,8 @@ function Get-UcmPagingGroups
     Write-Verbose "SortByIndex: $SortByIndex"
     Write-Verbose "Fields: $Fields"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listPaginggroup"
             "cookie" = $Cookie
             "page" = $Page

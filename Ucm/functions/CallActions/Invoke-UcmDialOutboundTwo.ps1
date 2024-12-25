@@ -28,8 +28,8 @@ function Invoke-UcmDialOutboundTwo
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "dialOutboundTwo"
             "cookie" = $Cookie
         }

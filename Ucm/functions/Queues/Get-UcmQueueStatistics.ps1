@@ -28,8 +28,8 @@ function Get-UcmQueueStatistics
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "queueapi"
             "cookie" = $Cookie
         }

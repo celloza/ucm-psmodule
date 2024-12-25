@@ -34,8 +34,8 @@ function Get-UcmInboundRoute
     Write-Verbose "Cookie: $Cookie"
     Write-Verbose "RouteId: $RouteId"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "getInboundRoute"
             "cookie" = $Cookie
             "inbound_route" = $RouteId

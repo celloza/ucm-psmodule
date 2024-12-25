@@ -59,8 +59,8 @@ function Get-UcmAnalogTrunk
     Write-Verbose "SortByIndex: $SortByIndex"
     Write-Verbose "Fields: $Fields"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listAnalogTrunk"
             "cookie" = $Cookie
             "page" = $Page

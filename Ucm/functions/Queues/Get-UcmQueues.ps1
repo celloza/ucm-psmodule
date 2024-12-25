@@ -60,8 +60,8 @@ function Get-UcmQueues
     Write-Verbose "SortByIndex: $SortByIndex"
     Write-Verbose "Fields: $Fields"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listQueue"
             "cookie" = $Cookie
             "page" = $Page

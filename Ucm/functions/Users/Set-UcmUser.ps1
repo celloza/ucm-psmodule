@@ -28,8 +28,8 @@ function Set-UcmUser
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "updateUser"
             "cookie" = $Cookie
         }

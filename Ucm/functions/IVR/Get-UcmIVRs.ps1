@@ -59,8 +59,8 @@ function Get-UcmIVRs
     Write-Verbose "SortByIndex: $SortByIndex"
     Write-Verbose "Fields: $Fields"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listIVR"
             "cookie" = $Cookie
             "page" = $Page

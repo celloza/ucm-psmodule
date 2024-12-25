@@ -103,8 +103,8 @@ function Invoke-UcmCdrApi
 
     $offset = ($Page - 1) * $Top
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "cdrapi"
             "cookie" = $Cookie
             "format" = $Format

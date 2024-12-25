@@ -31,8 +31,8 @@ function Get-UcmAnalogTrunk
     Write-Verbose "Cookie: $Cookie"
     Write-Verbose "TrunkId: $TrunkId"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "getAnalogTrunk"
             "cookie" = $Cookie
             "analogTrunk" = $TrunkId

@@ -63,8 +63,8 @@ function Get-UcmAccounts
     Write-Verbose "SortByIndex: $SortByIndex"
     Write-Verbose "Fields: $Fields"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listAccount"
             "cookie" = $Cookie
             "item_num" = $Top

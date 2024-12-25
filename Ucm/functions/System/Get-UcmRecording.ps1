@@ -48,8 +48,8 @@ function Get-UcmRecording
     Write-Verbose "Directory: $Directory"
     Write-Verbose "Filename: $Filename"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "recapi"
             "cookie" = $Cookie
             "filedir" = $Directory

@@ -28,8 +28,8 @@ function Invoke-UcmUnmute
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "Unmute"
             "cookie" = $Cookie
         }

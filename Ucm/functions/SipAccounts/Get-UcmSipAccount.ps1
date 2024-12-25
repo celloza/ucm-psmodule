@@ -34,8 +34,8 @@ function Get-UcmExtension
     Write-Verbose "Cookie: $Cookie"
     Write-Verbose "Extension: $Extension"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "getSIPAccount"
             "cookie" = $Cookie
             "Extension" = $ExtensionId
