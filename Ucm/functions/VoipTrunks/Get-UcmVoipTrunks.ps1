@@ -61,8 +61,8 @@ function Get-UcmVoipTrunks
     Write-Verbose "SortOrder: $SortOrder"
     Write-Verbose "SortByIndex: $SortByIndex"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listVoIPTrunk"
             "cookie" = $Cookie
             "options" = $Fields

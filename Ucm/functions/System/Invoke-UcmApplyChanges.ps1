@@ -28,8 +28,8 @@ function Invoke-UcmApplyChanges
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "applyChanges"
             "cookie" = $Cookie
         }

@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Lists all Paging/Intercom groups using the UCM API.
 

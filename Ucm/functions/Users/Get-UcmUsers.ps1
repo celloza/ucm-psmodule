@@ -65,8 +65,8 @@ function Get-UcmUsers
     Write-Verbose "SortByIndex: $SortByIndex"
     Write-Verbose "Fields: $Fields"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "listUser"
             "cookie" = $Cookie
             "page" = $Page

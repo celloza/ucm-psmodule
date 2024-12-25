@@ -61,6 +61,16 @@ Then, use the value of `$cookie` in all subsequent calls to the UCM API that req
 $pagingGroups = Get-UcmPagingGroup -Uri $uri -Cookie $cookie -PageNumber 1 -SortOrder "asc"
 ```
 
+## Paging (through results)
+
+All `get` and `list` actions offered by the API implement paging. Each cmdlet relating to a get or list operation allows you to specify the number of records (by specifying the `-Top` parameter) and the number of the page (by specifying the `-Page` parameter).
+
+In the `Get-CallDetailRecords` cmdlet this approach is implemented manually, since the `cdrapi` action expects a `num_records` argument and an `offset` argument. This is translated to a Page concept by multiplying the value of `Top` with `Page`.
+
+## Results from cmdlets
+
+All cmdlets return JSON objects.
+
 # Supported methods
 The list of supported UCM API _actions_ (so far) consists of:
 

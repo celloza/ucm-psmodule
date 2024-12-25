@@ -28,8 +28,8 @@ function Get-UcmSystemStatus
     Write-Verbose "Uri: $Uri"
     Write-Verbose "Cookie: $Cookie"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "getSystemStatus"
             "cookie" = $Cookie
         }

@@ -34,8 +34,8 @@ function Get-UcmUser
     Write-Verbose "Cookie: $Cookie"
     Write-Verbose "Username: $Username"
 
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             "action" = "getUser"
             "cookie" = $Cookie
             "user_name" = $Username
