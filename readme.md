@@ -50,7 +50,7 @@ $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvide
 $utf8 = New-Object -TypeName System.Text.UTF8Encoding
 $hash = [System.BitConverter]::ToString($md5.ComputeHash($utf8.GetBytes($tokenstring)))
 
-$md5token = $tokenstring.Replace("-","").ToLower()
+$md5token = $hash.Replace("-","").ToLower()
 
 $cookie = Get-UcmCookie -Uri $uri -Username $username -Md5Token $md5token
 ```
