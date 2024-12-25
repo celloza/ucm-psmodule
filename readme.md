@@ -62,12 +62,57 @@ $pagingGroups = Get-UcmPagingGroup -Uri $uri -Cookie $cookie -PageNumber 1 -Sort
 ```
 
 # Supported methods
-The list of supported UCM API _actions_ (so far) only consists of:
+The list of supported UCM API _actions_ (so far) consists of:
 
-* `challenge`
-* `login`
-* `listPaginggroup`
-* `dialExtension`
+* System
+  * `challenge`
+  * `login`
+  * `getSystemStatus`
+  * `getSystemGeneralStatus`
+  * `applyChanges`
+  * `recapi`
+  * `cdrapi`
+* Accounts
+  * `listAccount`
+* Analog Trunks
+  * `listAnalogTrunk`
+  * `getAnalogTrunk`
+* Bridged Channels
+  * `listUnBridgedChannels`
+  * `listBridgedChannels`
+* Call Actions
+  * `dialExtension`
+* Digital Trunks
+  * `listDigitalTrunk`
+  * `getDigitalTrunk`
+* ExtensionGroups
+  * `listExtensionGroup`
+* Inbound Routes
+  * `listInboundRoute`
+  * `getInboundRoute`
+* IVR
+  * `listIVR`
+  * `getIVR`
+* Outbound Routes
+  * `listOutboundRoute`
+  * `getOutboundRoute`
+* Paging/Intercom Groups
+  * `listPaginggroup`
+  * `getPaginggroup`
+* Pin sets
+  * `listPinSets`
+* Queues
+  * `listQueue`
+  * `getQueue`
+* SIP Accounts
+  * `getSipAccount`
+* SIP Trunks
+  * `getSipTrunk`
+* Users
+  * `listUser`
+  * `getUser`
+* VoIP Trunks
+  * `listVoipTrunk`
 
 # Contributing
 We welcome contributions through Pull Requests.

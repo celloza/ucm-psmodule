@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Invokes a dial through the UCM API.
 
