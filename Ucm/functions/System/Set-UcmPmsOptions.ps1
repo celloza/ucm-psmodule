@@ -13,7 +13,7 @@
 
 .EXAMPLE
     # Example usage
-    Invoke-UcmPmsApi -Uri http://10.10.10.1:80/api -Cookie "session_cookie"
+    Set-UcmPmsOptions -Uri http://10.10.10.1:80/api -Cookie "session_cookie"
 #>
 function Set-UcmPmsOptions
 {

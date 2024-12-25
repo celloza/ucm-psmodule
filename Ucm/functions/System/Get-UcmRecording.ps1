@@ -29,7 +29,7 @@
 
 .EXAMPLE
     # Example usage
-    Get-UcmRecApi -Uri http://10.10.10.1:80/api -Cookie "session_cookie"
+    Get-UcmRecording -Uri http://10.10.10.1:80/api -Cookie "session_cookie"
 #>
 function Get-UcmRecording
 {
