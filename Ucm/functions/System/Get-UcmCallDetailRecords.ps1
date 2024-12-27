@@ -184,7 +184,7 @@ function Get-UcmCallDetailRecords
             return (ConvertFrom-Json $apiResponse.Content).response
         }
     }
-    else 
+    else
     {
         return $apiResponse.Content
     }
