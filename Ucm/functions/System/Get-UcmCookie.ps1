@@ -58,6 +58,7 @@ function Get-UcmCookie
     if((ConvertFrom-Json $cookieResponse.content).status -ne 0)
     {
         Write-Error "Could not get a cookie from $uri. Status code was $((ConvertFrom-Json $cookieResponse.content).status)."
+        Write-Verbose "The error code provided by the UCM API was: $(Get-UcmErrorDescription -Code $((ConvertFrom-Json $apiResponse.content).status))"
     }
     else
     {
