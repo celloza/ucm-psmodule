@@ -12,8 +12,11 @@ param (
 	$LocalRepo,
 	[switch]
 	$SkipPublish,
+	[Parameter(Mandatory=$true,ParameterSetName="AutoVersion")]
 	[switch]
-	$AutoVersion
+	$AutoVersion,
+	[Parameter(Mandatory=$true,ParameterSetName="ManualVersion")]
+	$ManualVersion
 )
 
 #region Handle Working Directory Defaults
@@ -79,6 +82,14 @@ if ($AutoVersion)
 	Update-ModuleManifest -Path "$($publishDir.FullName)\UCM\UCM.psd1" -ModuleVersion "$($localVersion.Major).$($localVersion.Minor).$($newBuildNumber)"
 }
 #endregion Updating the Module Version
+
+#region Manual Versioning
+if ($PSBoundParameters.ContainsKey("ManualVersion"))
+{
+	Write-Host  "Manually setting the version number."
+	Update-ModuleManifest -Path "$($publishDir.FullName)\UCM\UCM.psd1" -ModuleVersion $ManualVersion
+}
+#endregion Manual Versioning
 
 #region Publish
 if ($SkipPublish) { return }

@@ -1,7 +1,7 @@
 ﻿on:
   push:
-    paths:
-      - UCM
+    tags:
+      - '*'
   workflow_dispatch:
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
       run: .\build\vsts-validate.ps1
       shell: pwsh
     - name: Build
-      run: .\build\vsts-build.ps1 -ApiKey $env:APIKEY -AutoVersion
+      run: .\build\vsts-build.ps1 -ApiKey $env:APIKEY -ManualVersion "${{ github.ref_name }}"
       shell: pwsh
       env:
         APIKEY: ${{ secrets.PSGalleryApiKey }}
