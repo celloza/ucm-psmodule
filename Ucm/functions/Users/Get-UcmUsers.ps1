@@ -54,7 +54,7 @@ function Get-UcmUsers
         [ValidateSet("asc","desc")]
         [string]$SortOrder = "asc",
         [bool]$SortByIndex = $true,
-        [string]$Fields = "department,first_name,last_name,email,language, fax,family_number,phone_number,login_time, ip"
+        [string]$Fields = "department,first_name,last_name,email,language,fax,family_number,phone_number,login_time,ip"
     )
 
     Write-Verbose "Uri: $Uri"
@@ -87,6 +87,7 @@ function Get-UcmUsers
     if((ConvertFrom-Json $apiResponse.Content).status -ne 0)
     {
         Write-Error "API call to listUser failed. Status code was $((ConvertFrom-Json $apiResponse.Content).status)."
+        Write-Verbose "The error code provided by the UCM API was: $(Get-UcmErrorDescription -Code $((ConvertFrom-Json $apiResponse.content).status))"
     }
     else
     {

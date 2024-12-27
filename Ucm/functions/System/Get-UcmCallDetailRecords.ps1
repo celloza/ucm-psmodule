@@ -77,16 +77,18 @@ function Get-UcmCallDetailRecords
         [string]$Uri,
         [Parameter(Mandatory)]
         [string]$Cookie,
+        [ValidateSet("csv","json","xml")]
         [string]$Format = "json",
         [Int32]$Top = 1000,
         [Int32]$Page = 1,
         [string]$Caller,
         [string]$Callee,
-        [datetime]$StartTime = "2000-01-01T00:00:00.000",
-        [datetime]$EndTime = "2099-12-31T23:59:59.999",
+        [datetime]$StartTime,
+        [datetime]$EndTime,
+        [ValidateSet("Start","End")]
         [string]$TimeFilterType,
-        [Int32]$MinimumDuration = 0,
-        [Int32]$MaximumDuration = 99999,
+        [Int32]$MinimumDuration,
+        [Int32]$MaximumDuration,
         [string]$AnsweredBy,
         [string]$CallerName
     )
@@ -100,6 +102,10 @@ function Get-UcmCallDetailRecords
     Write-Verbose "Callee: $Callee"
     Write-Verbose "StartTime: $StartTime"
     Write-Verbose "EndTime: $EndTime"
+    Write-Verbose "MinimumDuration: $EndTime"
+    Write-Verbose "MaximumDuration: $EndTime"
+    Write-Verbose "AnsweredBy: $AnsweredBy"
+    Write-Verbose "CallerName: $CallerName"
 
     $offset = ($Page - 1) * $Top
 
@@ -110,26 +116,76 @@ function Get-UcmCallDetailRecords
             "format" = $Format
             "numRecords" = $Top
             "offset" = $offset
-            "caller" = $Caller
-            "callee" = $Callee
-            "startTime" = $StartTime
-            "endTime" = $EndTime
         }
     }
 
+    if($PSBoundParameters.ContainsKey('Caller'))
+    {
+        $apiRequest.Add("caller", $Caller)
+    }
+
+    if($PSBoundParameters.ContainsKey('Callee'))
+    {
+        $apiRequest.Add("callee", $Callee)
+    }
+
+    if($PSBoundParameters.ContainsKey('StartTime'))
+    {
+        $apiRequest.Add("startTime", $StartTime)
+    }
+
+    if($PSBoundParameters.ContainsKey('EndTime'))
+    {
+        $apiRequest.Add("endTime", $EndTime)
+    }
+
+    if($PSBoundParameters.ContainsKey('MinimumDuration'))
+    {
+        $apiRequest.Add("minDur", $MinimumDuration)
+    }
+
+    if($PSBoundParameters.ContainsKey('MaximumDuration'))
+    {
+        $apiRequest.Add("maxDur", $MaximumDuration)
+    }
+
+    if($PSBoundParameters.ContainsKey('AnsweredBy'))
+    {
+        $apiRequest.Add("answeredby", $AnsweredBy)
+    }
+
+    if($PSBoundParameters.ContainsKey('CallerName'))
+    {
+        $apiRequest.Add("callerName", $CallerName)
+    }
+
+    if($PSBoundParameters.ContainsKey('TimeFilterType'))
+    {
+        # The documentation refers to this field as 'tineFilterType'... assuming this is an error
+        $apiRequest.Add("timeFilterType", $TimeFilterType)
+    }
+
     Write-Verbose "Request: $(ConvertTo-Json $apiRequest)"
-    
+
     $apiResponse = Invoke-WebRequest -Method POST -ContentType "application/json;charset=UTF-8" `
         -Body (ConvertTo-JSON $apiRequest) -Uri $Uri -DisableKeepAlive -SkipCertificateCheck
 
     Write-Verbose "Response: $apiResponse"
 
-    if((ConvertFrom-Json $apiResponse.Content).status -ne 0)
+    if($Format -eq "json")
     {
-        Write-Error "API call to cdrapi failed. Status code was $((ConvertFrom-Json $apiResponse.Content).status)."
+        if((ConvertFrom-Json $apiResponse.Content).status -ne 0)
+        {
+            Write-Error "API call to cdrapi failed. Status code was $((ConvertFrom-Json $apiResponse.Content).status)."
+            Write-Verbose "The error code provided by the UCM API was: $(Get-UcmErrorDescription -Code $((ConvertFrom-Json $apiResponse.content).status))"
+        }
+        else
+        {
+            return (ConvertFrom-Json $apiResponse.Content).response
+        }
     }
     else
     {
-        return (ConvertFrom-Json $apiResponse.Content).response
+        return $apiResponse.Content
     }
 }

@@ -45,6 +45,7 @@ function Get-UcmUnbridgedChannels
     if((ConvertFrom-Json $apiResponse.Content).status -ne 0)
     {
         Write-Error "API call to listUnBridgedChannels failed. Status code was $((ConvertFrom-Json $apiResponse.Content).status)."
+        Write-Verbose "The error code provided by the UCM API was: $(Get-UcmErrorDescription -Code $((ConvertFrom-Json $apiResponse.content).status))"
     }
     else
     {
