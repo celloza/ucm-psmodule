@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Returns the textual description for a given UCM API error code.
 
@@ -56,7 +56,7 @@ function Get-UcmErrorDescription
     {
         return $errors[$Code]
     }
-    else 
+    else
     {
         return "Undocumented error"
     }
