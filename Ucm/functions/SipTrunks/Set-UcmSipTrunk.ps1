@@ -170,16 +170,16 @@
 
 .PARAMETER Transport
     SIP transport method. Options: `udp`, `tcp`, `tls`.
-    Specifies the transport protocol used for SIP signaling. 
+    Specifies the transport protocol used for SIP signaling.
 
 .PARAMETER TrunkName
     The name of the trunk.
     The name used to identify the SIP trunk.
 
 .PARAMETER UseDodInPpi
-    Configure how to set the PPI number. 
-    When `use_dod_in_ppi` and `use_origcid_in_ppi` are both `no`, set the PPI number by CID option priority. 
-    When `use_origcid_in_ppi` is `yes`, use the original CID in the PPI header. If no original CID, use the default number. 
+    Configure how to set the PPI number.
+    When `use_dod_in_ppi` and `use_origcid_in_ppi` are both `no`, set the PPI number by CID option priority.
+    When `use_origcid_in_ppi` is `yes`, use the original CID in the PPI header. If no original CID, use the default number.
     When `use_dod_in_ppi` is `yes`, use the DOD number in the PPI header. If no DOD number, use the default number.
 
 .PARAMETER UseOrigCidInPpi

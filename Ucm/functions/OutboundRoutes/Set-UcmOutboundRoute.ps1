@@ -109,13 +109,13 @@ function Set-UcmOutboundRoute {
     )
 
     # Initialize API request
-    $apiRequest = @{ 
-        request = @{ 
+    $apiRequest = @{
+        request = @{
             action = "updateOutboundRoute"
             cookie = $Cookie
             outbound_rt_name = $RouteName
             outbound_rt_index = $RouteId
-        } 
+        }
     }
 
     # Add optional parameters and verbose logging

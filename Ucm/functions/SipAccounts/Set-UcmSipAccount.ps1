@@ -49,7 +49,7 @@
 
 .PARAMETER FaxDetect
     Fax detection mode. Options: `no`, `yes`.
-    Determines whether fax detection is enabled for the extension. 
+    Determines whether fax detection is enabled for the extension.
 
 .PARAMETER SendToFax
     Whether to send calls to fax. Options: `yes`, `no`.

@@ -64,7 +64,7 @@
     The type of line for the analog trunk. Options: `fxs`, `fxo`.
 
 .PARAMETER OutMaxChans
-    The maximum number of channels for outbound calls. 
+    The maximum number of channels for outbound calls.
 
 .PARAMETER OutOfService
     Whether the trunk is out of service. Options: `yes`, `no`.

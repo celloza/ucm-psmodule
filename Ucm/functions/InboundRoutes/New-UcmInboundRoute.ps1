@@ -9,11 +9,11 @@
     The full URI (including the protocol) to the UCM API, e.g., http://10.10.10.1:80/api.
 
 .PARAMETER Cookie
-    The session cookie obtained from the login process. Used to authenticate the API request. 
+    The session cookie obtained from the login process. Used to authenticate the API request.
     **(Mandatory)** This cookie is required to authenticate API requests. If no cookie is provided, an error code will be returned.
 
 .PARAMETER InboundRoute
-    The ID of the inbound route to configure. **(Mandatory)** 
+    The ID of the inbound route to configure. **(Mandatory)**
     This parameter defines the unique identifier for the inbound route being configured.
 
 .PARAMETER TrunkIndex

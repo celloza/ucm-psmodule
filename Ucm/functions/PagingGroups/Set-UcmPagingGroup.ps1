@@ -75,7 +75,7 @@
 
 .PARAMETER CustomDate
     Date for scheduling the paging group to be triggered.
-    Used to define a specific day (in YYYY-MM-DD format) on which the paging group should be active. 
+    Used to define a specific day (in YYYY-MM-DD format) on which the paging group should be active.
 
 .PARAMETER CustomPrompt
     Custom prompt audio file for paging.

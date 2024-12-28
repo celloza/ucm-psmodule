@@ -9,7 +9,7 @@
     The full URI (including the protocol) to the UCM API, e.g., http://10.10.10.1:80/api.
 
 .PARAMETER Cookie
-    The session cookie obtained from the login process. Used to authenticate the API request. 
+    The session cookie obtained from the login process. Used to authenticate the API request.
     **(Mandatory)** This cookie is required for authentication, and if not provided, an error code -6 will be returned.
 
 .PARAMETER Ivr
