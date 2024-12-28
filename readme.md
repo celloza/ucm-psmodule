@@ -87,6 +87,9 @@ The list of supported UCM API _actions_ (so far) consists of:
 * Analog Trunks
   * `listAnalogTrunk`
   * `getAnalogTrunk`
+  * `newAnalogTrunk`
+  * `deleteAnalogTrunk`
+  * `updateAnalogTrunk`
 * Bridged Channels
   * `listUnBridgedChannels`
   * `listBridgedChannels`
@@ -95,32 +98,57 @@ The list of supported UCM API _actions_ (so far) consists of:
 * Digital Trunks
   * `listDigitalTrunk`
   * `getDigitalTrunk`
+  * `newDigitalTrunk`
+  * `deleteDigitalTrunk`
+  * `updateDigitalTrunk`
 * ExtensionGroups
   * `listExtensionGroup`
 * Inbound Routes
   * `listInboundRoute`
   * `getInboundRoute`
+  * `newInboundRoute`
+  * `deleteInboundRoute`
+  * `updateInboundRoute`
 * IVR
   * `listIVR`
   * `getIVR`
+  * `newIVR`
+  * `deleteIVR`
+  * `updateIVR`
 * Outbound Routes
   * `listOutboundRoute`
   * `getOutboundRoute`
+  * `newOutboundRoute`
+  * `deleteOutboundRoute`
+  * `updateOutboundRoute`
 * Paging/Intercom Groups
   * `listPaginggroup`
   * `getPaginggroup`
+  * `newPaginggroup`
+  * `deletePaginggroup`
+  * `updatePaginggroup`
 * Pin sets
   * `listPinSets`
 * Queues
   * `listQueue`
   * `getQueue`
+  * `newQueue`
+  * `deleteQueue`
+  * `updateQueue`
 * SIP Accounts
   * `getSipAccount`
+  * `newSipAccount`
+  * `deleteSipAccount`
+  * `updateSipAccount`
 * SIP Trunks
   * `getSipTrunk`
+  * `newSipTrunk`
+  * `deleteSipTrunk`
+  * `updateSipTrunk`
 * Users
   * `listUser`
   * `getUser`
+  * `updateUser`
 * VoIP Trunks
   * `listVoipTrunk`
 
